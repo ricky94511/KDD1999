@@ -1,0 +1,26 @@
+package bigdata
+import org.apache.spark.mllib.clustering.KMeans
+import org.apache.spark.mllib.linalg.Vectors
+import scala.math.random
+import org.apache.spark._
+import SparkContext._
+
+object kmeans {
+
+  def main(args: Array[String]) {
+    val conf = new SparkConf().setAppName("tv_ad")
+    val sc = new SparkContext(conf)
+    val data = sc.textFile("/home/ubuntu/spark/kmeans.txt")
+    val parsedData = data.map(s => Vectors.dense(s.split(' ').map(_.toDouble))).cache()
+
+    // Cluster the data into two classes using KMeans
+    val numClusters = 2
+    val numIterations = 100
+    val clusters = KMeans.train(parsedData, numClusters, numIterations)
+
+    // Evaluate clustering by computing Within Set Sum of Squared Errors
+    val WSSSE = clusters.computeCost(parsedData)
+    println("Within Set Sum of Squared Errors = " + WSSSE)
+  }
+
+}
