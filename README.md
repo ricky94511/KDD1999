@@ -19,3 +19,8 @@
  | true  | false |
  | ------| ----- |
  | 967140| 12546 |
+ 
+ | First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
