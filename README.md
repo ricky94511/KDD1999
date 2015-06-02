@@ -15,12 +15,9 @@
 3.classification model   <br />
 -----------------------------------------------------------------------------
  第一個我們使用decesion tree來做分類，當只使用兩個attribute時 <br />
+ 總共的筆數：4898431，我們切成80% train  20%  test <br />
+ 那test中，分對的筆數為 967140，錯誤的筆數為12546筆 <br />
+ 正確率為98.71%
  
- | true  | false |
- | ------| ----- |
- | 967140| 12546 |
  
- | First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+ 
